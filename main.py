@@ -60,7 +60,7 @@ train = optimizer.minimize(error)
 init = tf.global_variables_initializer()
 with tf.Session() as sess:
     sess.run(init)
-    training_steps = 1
+    training_steps = 100
     for i in range(training_steps):
         sess.run(train)
     final_slope, final_intercept = sess.run([m, b])
