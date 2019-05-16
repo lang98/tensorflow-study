@@ -2,6 +2,10 @@ import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
+'''
+test of sess.run
+'''
+
 np.random.seed(101)
 tf.set_random_seed(101)
 
@@ -21,8 +25,9 @@ with tf.Session() as sess:
     mult_result = sess.run(mul_op, feed_dict={a: rand_a, b: rand_b})
     # print(mult_result)
 
-
-# neural network
+'''
+neural network, test of sess run and tf.Variable
+'''
 
 n_features = 10
 n_dense_neurons = 3
@@ -41,7 +46,10 @@ with tf.Session() as sess:
     layer_out = sess.run(a, feed_dict={x: np.random.random([1, n_features])})
     print(layer_out)
 
-# regression
+'''
+regression with graph
+'''
+
 x_data = np.linspace(0, 10, 10) + np.random.uniform(-1.5, 1.5, 10)
 y_label = np.linspace(0, 10, 10) + np.random.uniform(-1.5, 1.5, 10)
 plt.plot(x_data, y_label, '*')
